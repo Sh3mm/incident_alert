@@ -3,6 +3,11 @@
     public class Employee
     {
         private string _employeeName;
+        public string EmployeeName
+        {
+            get { return _employeeName; }
+            set { _employeeName = value; }
+        }
 
         private string _cellphone;
         public string Cellphone
@@ -18,20 +23,29 @@
             set { _email = value; }
         }
 
-        public Employee() {}
-
-        public Employee (string name, string email)
+        private int _title;
+        public int Title
         {
-            _employeeName = name;
-            _email = email;
+            get { return _title; }
+            set { _title = value; }
         }
 
-        public Employee (string name,string email, string cellphone)
+
+        public Employee() {}
+
+        public Employee (string name, string email, int title)
         {
             _employeeName = name;
+            _email = email;
+            _title = title;
+        }
 
+        public Employee (string name, string email, int title, string cellphone)
+        {
+            _employeeName = name;
             _cellphone = cellphone;
             _email = email;
+            _title = title;
         }
 
         ~Employee() {}

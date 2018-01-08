@@ -1,6 +1,6 @@
 ﻿namespace NotificationLibrary
 {
-    static class Constantes
+    public static class Constantes
     {
         public enum NotificationTypes
         {
@@ -8,11 +8,19 @@
             Text
         };
 
-        public enum AlertType
+
+        public static readonly string[] AlertType = 
         {
-            SystemCrash,
-            ComputerMeltdown,
-            NuclearBomb
+            "SystemCrash",
+            "ComputerMeltdown",
+            "NuclearBomb"
+        };
+
+        public static readonly string[] UserType =
+        {
+            "IT Personel",
+            "Critical User",
+            "Subscription User"
         };
     }
 }
