@@ -41,15 +41,13 @@ namespace NotificationLibrary
                 _notificationTypes[i] = (int) Constantes.NotificationTypes.Email;
         }
 
-        public bool AddNotifcation(string email, int alertType, int notificationType)
+        public void AddNotifcation(string email, int alertType, int notificationType)
         {
             for (int i = 0; i < _employeeList.Length; i++)
                 if (email == _employeeList[i].Email)
                 {
                     _notifications[i] = NewNotifcation(_notifications[i], alertType);
-                    return true;
                 }
-            return false;
         }
 
         private int[] NewNotifcation(int[] notification, int alertType)
@@ -61,15 +59,13 @@ namespace NotificationLibrary
             return newNotifcation;
         }
 
-        public bool ChangeNotificationType(string email, int type)
+        public void ChangeNotificationType(string email, int type)
         {
             for (int i = 0; i < _employeeList.Length; i++)
                 if (email == _employeeList[i].Email)
                 {
                     _notificationTypes[i] = type;
-                    return true;
                 }
-            return false;
         }
 
         public void AddEmployee(Employee newEmployee)

@@ -8,8 +8,13 @@
             Text
         };
 
+        public enum AlertState
+        {
+            OnGoing,
+            Finished
+        };
 
-        public static readonly string[] AlertType = 
+        public static readonly string[] AlertType =
         {
             "SystemCrash",
             "ComputerMeltdown",
@@ -22,5 +27,18 @@
             "Critical User",
             "Subscription User"
         };
+
+        public static readonly string[] AppCategory =
+        { 
+            "application"
+        };
+
+        public static readonly string[] SeverityType =
+        {
+            "P1",
+            "P2",
+            "P3"
+        };
+
     }
 }

@@ -19,10 +19,10 @@ namespace AlertManagement
             InitializeComponent();
         }
 
-        public MainMenu(Abonements abonements)
+        public MainMenu(DataBase dataBase)
         {
             InitializeComponent();
-            _abonements = abonements;
+            _dataBase = dataBase;
         }
 
         private void UpdateNumbers()
@@ -32,7 +32,7 @@ namespace AlertManagement
             int CriticalUser = DEFAULT_NUMBER;
             int Subscribers = DEFAULT_NUMBER;
 
-            foreach (Employee employee in _abonements.employeeList)
+            foreach (Employee employee in _dataBase.abonements.employeeList)
                 switch (employee.Title)
                 {
                     case 0:
@@ -43,8 +43,8 @@ namespace AlertManagement
                         Subscribers++ ; break;
                 }
 
-            int Applications = DEFAULT_NUMBER;
-            int Alerts = DEFAULT_NUMBER;
+            int Applications = _dataBase.applications.Length;
+            int Alerts = _dataBase.alerts.Length;
 
             button1.Text = ("           " + ITPersonnel + " IT personel\n\n" +
                             "           " + CriticalUser + " Critical Users\n\n" +
@@ -68,12 +68,20 @@ namespace AlertManagement
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            AppManagement appManagement = new AppManagement();
+
+            appManagement.Show();
+            UpdateNumbers();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateNumbers();
         }
     }
 }

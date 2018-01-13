@@ -18,27 +18,22 @@ namespace AlertManagement
         {
             InitializeComponent();
         }
-        public UserManagement(Abonements notificationList)
-        {
-            InitializeComponent();
-            MainMenu._abonements = notificationList;
-        }
 
-        public void Updateboard()
+        private void Updateboard()
         {
             listView1.Items.Clear();
 
             //Add items in the listview
             string[] arr = new string[5];
             ListViewItem itm;
-            for (int i = 0; i < MainMenu._abonements.employeeList.Length; i++)
+            for (int i = 0; i < MainMenu._dataBase.abonements.employeeList.Length; i++)
             {
                 //Add first item
-                arr[0] = MainMenu._abonements.employeeList[i].Email;
-                arr[1] = MainMenu._abonements.employeeList[i].EmployeeName;
-                arr[2] = MainMenu._abonements.employeeList[i].Email;
-                arr[3] = Constantes.UserType[MainMenu._abonements.employeeList[i].Title];
-                arr[4] = MainMenu._abonements.employeeList[i].Cellphone;
+                arr[0] = MainMenu._dataBase.abonements.employeeList[i].Email;
+                arr[1] = MainMenu._dataBase.abonements.employeeList[i].EmployeeName;
+                arr[2] = MainMenu._dataBase.abonements.employeeList[i].Email;
+                arr[3] = Constantes.UserType[MainMenu._dataBase.abonements.employeeList[i].Title];
+                arr[4] = MainMenu._dataBase.abonements.employeeList[i].Cellphone;
                 itm = new ListViewItem(arr);
                 listView1.Items.Add(itm);
 

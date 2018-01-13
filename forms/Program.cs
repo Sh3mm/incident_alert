@@ -17,9 +17,9 @@ namespace AlertManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Abonements z = new Abonements();
+            DataBase z = new DataBase();
             Application.Run(new MainMenu(z));
-            z = MainMenu._abonements;
+            z = MainMenu._dataBase;
 
         }
     }

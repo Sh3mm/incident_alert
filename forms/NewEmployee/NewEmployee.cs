@@ -52,7 +52,7 @@ namespace AlertManagement
 
         private void update_Abonements(Employee newEmployee)
         {
-            MainMenu._abonements.AddEmployee(newEmployee,_notificationList,_notificationType);
+            MainMenu._dataBase.abonements.AddEmployee(newEmployee,_notificationList,_notificationType);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -130,12 +130,12 @@ namespace AlertManagement
         private void Form1_Load(object sender, EventArgs e)
         {
             checkedListBox1.Items.AddRange(Constantes.AlertType);
+            comboBox1.Items.AddRange(Constantes.UserType);
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             _title = comboBox1.SelectedIndex;
-            Console.WriteLine(_title);
         }
     }
 }
