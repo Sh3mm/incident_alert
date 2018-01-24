@@ -63,7 +63,6 @@ namespace AlertManagement
             UserManagement userManagement = new UserManagement();
 
             userManagement.Show();
-            UpdateNumbers();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -71,12 +70,13 @@ namespace AlertManagement
             AppManagement appManagement = new AppManagement();
 
             appManagement.Show();
-            UpdateNumbers();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Alert_management alertManagement = new Alert_management();
 
+            alertManagement.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

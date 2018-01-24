@@ -74,5 +74,6 @@ namespace AlertManagement
             comboBox1.Items.AddRange(Constantes.SeverityType);
             comboBox2.Items.AddRange(Constantes.AppCategory);
         }
+
     }
 }
